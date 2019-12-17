@@ -1,7 +1,7 @@
 {
-  "name": "6",
+  "name": "shaofei",
   "age": 10,
-  "email": "3308129@qq.com.cn",
+  "email": "pyfysf@163.com",
   "idCard": "123456789010101019",
   "ccc123": 789,
   "like": [
@@ -11,5 +11,6 @@
   "phone": "16666669654",
   "hostname": "192.168.1.1",
   "createTime": "20191011",
-  "is": true
+  "is": true,
+  "foo": "bar"
 }

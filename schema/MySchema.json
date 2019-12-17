@@ -6,11 +6,16 @@
   "properties": {
     "name": {
       "type": "string",
-      "maxLength": 2
+      "enum": [
+        "shaofei",
+        "upuptop",
+        "pyfysf"
+      ]
     },
     "email": {
       "type": "string",
-      "format": "email"
+      "format": "email",
+      "const": "pyfysf@163.com"
     },
     "idCard": {
       "type": "string",
@@ -25,10 +30,6 @@
       "type": "string",
       "format": "hostname"
     },
-    "createTime": {
-      "format": "date",
-      "format_patten": "%Y%m%d"
-    },
     "is": {
       "type": "boolean"
     },
@@ -39,16 +40,40 @@
       "multipleOf": 2
     },
     "like": {
-      "type": "array",
-      "minItems": 2,
-      "maxItems": 30,
-      "uniqueItems": true
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "array"
+        }
+      ]
     }
   },
   "patternProperties": {
     "^\\S+123$": {
-      "type": "integer"
     }
+  },
+  "if": {
+    "properties": {
+      "foo": {
+        "enum": [
+          "bar",
+          "123"
+        ]
+      }
+    },
+    "required": [
+      "foo"
+    ]
+  },
+  "then": {
+    "required": [
+      "bar"
+    ]
   },
   "required": [
     "email"
