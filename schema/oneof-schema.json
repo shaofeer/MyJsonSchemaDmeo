@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "paas-conf",
+  "description": "paas-conf",
+  "type": "object",
+  "properties": {
+    "age": {
+      "if": {
+        "type": "array"
+      }
+    },
+    "allOfcmd": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "allOf": [
+        {
+          "properties": {
+            "cmd": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "cmd"
+          ]
+        },
+        {
+          "if": {
+            "properties": {
+              "cmd": {
+                "const": "aaa"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "cmdaaa"
+            ]
+          },
+          "required": [
+            "cmd"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "age": [
+      "name"
+    ]
+  },
+  "required": [
+    "name",
+    "age",
+    "allOfcmd"
+  ]
+}
+

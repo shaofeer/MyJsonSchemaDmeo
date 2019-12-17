@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TestInfo",
+  "description": "some information about test",
+  "type": "object",
+  "minProperties": 0,
+  "maxProperties": 20,
+  "patternProperties": {
+    "^a\\d+$": {
+      "type": "integer",
+      "maxLength": 2
+    }
+  }
+}

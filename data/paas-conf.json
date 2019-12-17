@@ -1,0 +1,18 @@
+{
+  "pfpp_process_time": "2019-12-10T03:51:39.872Z",
+  "MESSTYPE": "01",
+  "COMPKEY": "1_CRM_BAS_001",
+  "HOSTIP": "133.0.206.27",
+  "MESSATTR": {
+    "accessClusterName": "CRM_BAS_ACCESS_001",
+    "redisClusterName": "CRM_BAS_REDIS_001",
+    "userName": "CRM_BAS_001"
+  },
+  "@timestamp": "2019-12-10T03:51:39.872Z",
+  "COMPTYPE": "170200",
+  "name": "PS.REDIS",
+  "PROVID": "8420000",
+  "@version": "1",
+  "type": "ETE_PAASCONF_8420000",
+  "COLLECTTIME": "2019-12-10 11:52:06"
+}

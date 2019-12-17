@@ -1,0 +1,15 @@
+{
+  "name": "6",
+  "age": 10,
+  "email": "3308129@qq.com.cn",
+  "idCard": "123456789010101019",
+  "ccc123": 789,
+  "like": [
+    123,
+    "android"
+  ],
+  "phone": "16666669654",
+  "hostname": "192.168.1.1",
+  "createTime": "20191011",
+  "is": true
+}

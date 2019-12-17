@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "minPropertiesDesc": "对象key个数小于",
+  "minProperties": 100,
+  "properties": {
+    "virtualOrderId": {
+      "$id": "no_empty",
+      "type": "string",
+      "pattern": "\\S+",
+      "maxLength": 12
+    },
+    "pageId": {
+      "type": "string",
+      "pattern": "\\S+"
+    },
+    "systemCode": {
+      "type": "string",
+      "pattern": "^8\\d+$"
+    },
+    "staffId": {
+      "type": "string",
+      "pattern": "\\S+"
+    },
+    "channelNbr": {
+      "type": "string",
+      "pattern": "\\S+"
+    },
+    "eventType": {
+      "type": "string",
+      "enum": [
+        "pageLoad",
+        "pageUnload",
+        "pageKeypress",
+        "eleClick",
+        "eleDbclick",
+        "eleFocus",
+        "eleChange"
+      ]
+    }
+  },
+  "if": {
+    "properties": {
+      "eventType": {
+        "const": "pageLoad"
+      }
+    }
+  },
+  "then": {
+    "description": "前端页面相关属性 pageLoad事件必采集",
+    "properties": {
+      "evtTime": {
+        "type": "string"
+      },
+      "serverTime": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "sessionId",
+      "virtualOrderId",
+      "pageId",
+      "evtTime",
+      "serverTime"
+    ]
+  },
+  "else": {
+    "required": [
+    ]
+  },
+  "required": [
+    "virtualOrderId",
+    "eventType",
+    "areaCode",
+    "systemCode",
+    "staffId",
+    "channelNbr",
+    "orderFlowCode",
+    "operCode",
+    "stepCode",
+    "sessionId",
+    "pageId",
+    "serverTime"
+  ]
+}

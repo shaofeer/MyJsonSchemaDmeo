@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "foo": {
+      "type": "string"
+    },
+    "bar": {
+      "type": "string"
+    }
+  },
+  "if": {
+    "properties": {
+      "foo": {
+        "const": "bar"
+      }
+    },
+    "required": [
+      "foo"
+    ]
+  },
+  "then": {
+    "required": [
+      "bar"
+    ]
+  },
+  "else": {
+    "required": [
+      "cc"
+    ]
+  }
+}

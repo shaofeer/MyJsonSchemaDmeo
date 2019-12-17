@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TestInfo",
+  "description": "some information about test",
+  "type": "object",
+  "minProperties": 0,
+  "maxProperties": 20,
+  "properties": {
+    "name": {
+      "description": "姓名必须由2-3个字组成",
+      "type": "string",
+      "maxLength": 3,
+      "minLength": 2
+    },
+    "age": {
+      "description": "年龄必须大于18岁。并且不能超过60岁",
+      "type": "integer",
+      "minimum": 18,
+      "maximum": 60
+    },
+    "like": {
+      "type": "array",
+      "items": {
+        "maxLength": 13,
+        "minLength": 1
+      }
+    },
+    "other": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "maxLength": 20,
+          "minLength": 2
+        },
+        {
+          "type": "number",
+          "minimum": 20
+        },
+        {
+          "type": "number",
+          "maximum": 2
+        }
+      ],
+      "additionalItems": {
+        "type": "string",
+        "maxLength": 10
+      },
+      "maxItems": 10,
+      "minItems": 3,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "name",
+    "age"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "paas-conf",
+  "description": "paas-conf",
+  "type": "object",
+  "properties": {
+    "COMPKEY": {
+      "description": "组件对象唯一标识",
+      "type": "string"
+    },
+    "COMPTYPE": {
+      "type": "string"
+    },
+    "MESSTYPE": {
+      "description": "报文类型（01:组件对象属性报文;02:组件对象关系报文）",
+      "type": "string",
+      "enum": [
+        "01",
+        "02"
+      ]
+    },
+    "HOSTIP": {
+      "type": "string",
+      "format": "hostname"
+    },
+    "PROVID": {
+      "type": "string"
+    },
+    "COLLECTTIME": {
+      "type": "string"
+    },
+    "MESSATTR": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "COMPKEY",
+    "COMPTYPE",
+    "MESSTYPE",
+    "HOSTIP",
+    "PROVID",
+    "COLLECTTIME",
+    "MESSATTR"
+  ]
+}
