@@ -1,3 +1,20 @@
+本文目录
+   * [JsonSchmea用法](#jsonschmea用法)
+      * [简介](#简介)
+      * [关键字及其描述](#关键字及其描述)
+      * [JSON Schema关键字详解](#json-schema关键字详解)
+      * [type的常用取值](#type的常用取值)
+      * [关键字详解](#关键字详解)
+         * [最外层type为object时](#最外层type为object时)
+         * [最外层type为array时](#最外层type为array时)
+         * [当type的值为integer或者number时](#当type的值为integer或者number时)
+         * [当type取值为string时](#当type取值为string时)
+         * [全类型可用](#全类型可用)
+         * [type关键字](#type关键字)
+         * [dependencies关键字](#dependencies关键字)
+         * [$ref关键字](#ref关键字)
+         * [if-then-else 关键字](#if-then-else-关键字)
+
 # JsonSchmea用法
 
 ## 简介
@@ -554,10 +571,26 @@ if返回false执行else
 > 本文参考：[https://www.cnblogs.com/ChangAn223/articles/11234348.htm](https://www.cnblogs.com/ChangAn223/articles/11234348.htm)
 
 
-<a href='https://github.com/upuptop/MyJsonSchemaDmeo#jsonschmea%E7%94%A8%E6%B3%95'><img src='./img/top.png'></a>
+<a href='https://github.com/upuptop/MyJsonSchemaDmeo#jsonschmea%E7%94%A8%E6%B3%95'><img width='96' height='96' style='float:right' src='./img/top.png'></a>
+
+### 本文目录
+   * [JsonSchmea用法](#jsonschmea用法)
+      * [简介](#简介)
+      * [关键字及其描述](#关键字及其描述)
+      * [JSON Schema关键字详解](#json-schema关键字详解)
+      * [type的常用取值](#type的常用取值)
+      * [关键字详解](#关键字详解)
+         * [最外层type为object时](#最外层type为object时)
+         * [最外层type为array时](#最外层type为array时)
+         * [当type的值为integer或者number时](#当type的值为integer或者number时)
+         * [当type取值为string时](#当type取值为string时)
+         * [全类型可用](#全类型可用)
+         * [type关键字](#type关键字)
+         * [dependencies关键字](#dependencies关键字)
+         * [$ref关键字](#ref关键字)
+         * [if-then-else 关键字](#if-then-else-关键字)
 
 
-[TOC]
 
 
 
