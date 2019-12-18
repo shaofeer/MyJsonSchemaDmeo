@@ -1,4 +1,3 @@
-import json
 import re
 import time
 
@@ -298,7 +297,10 @@ def check_common(schema, data):
             if "then" in schema:
                 then_schema = schema['then']
                 check_data(then_schema, data, False)
-
+        else:
+            if "else" in schema:
+                else_schema = schema['else']
+                check_data(else_schema, data, False)
 
 def get_data_type(data):
     """
@@ -336,15 +338,3 @@ def check_data(schema, data, is_common=False):
     elif type_name == 'boolean':
         if type(data) != bool:
             log_error("当前校验的数据不是一个boolean格式", data, schema, is_common)
-
-
-if __name__ == '__main__':
-    with open('../schema/MySchema.json', encoding='utf8') as f:
-        my_schema = json.load(f)
-
-    # json数据：
-    with open('../data/cece.json', encoding='utf8') as f:
-        json_data = json.load(f)
-
-    check_data(my_schema, json_data)
-    # print(ERR_LIST)
