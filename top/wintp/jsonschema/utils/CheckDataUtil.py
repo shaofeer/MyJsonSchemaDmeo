@@ -1,3 +1,4 @@
+import json
 import re
 import time
 
@@ -15,6 +16,8 @@ ZIP_CODE_REGEX = "^[1-9]\d{5}(?!\d)$"
 IP_REGEX = "^\d+\.\d+\.\d+\.\d+$"
 # 正整数
 INTEGER_REGEX = "^[1-9]\d*$"
+# 不为空
+NO_EMPTY_REGEX = "^\\S+$"
 
 ERR_LIST = []
 COMMON_ERR_LIST = []
@@ -212,6 +215,9 @@ def check_str(data, schema, is_common):
             if format_schema == 'email' and not re.match(EMAIL_REGEX, data):
                 log_error("当前校验的数据不是正确的邮箱格式", data, schema, is_common)
 
+            if format_schema == 'notemp' and not re.match(NO_EMPTY_REGEX, data):
+                log_error("当前校验的数据为空", data, schema, is_common)
+
             elif format_schema == 'phone' and not re.match(PHONE_REGEX, data):
                 log_error("当前校验的数据不是正确的手机号码格式", data, schema, is_common)
 
@@ -297,10 +303,7 @@ def check_common(schema, data):
             if "then" in schema:
                 then_schema = schema['then']
                 check_data(then_schema, data, False)
-        else:
-            if "else" in schema:
-                else_schema = schema['else']
-                check_data(else_schema, data, False)
+
 
 def get_data_type(data):
     """
@@ -338,3 +341,4 @@ def check_data(schema, data, is_common=False):
     elif type_name == 'boolean':
         if type(data) != bool:
             log_error("当前校验的数据不是一个boolean格式", data, schema, is_common)
+

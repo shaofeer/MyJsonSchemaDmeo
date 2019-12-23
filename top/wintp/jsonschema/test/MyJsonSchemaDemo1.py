@@ -16,6 +16,8 @@ ZIP_CODE_REGEX = "^[1-9]\d{5}(?!\d)$"
 IP_REGEX = "^\d+\.\d+\.\d+\.\d+$"
 # 正整数
 INTEGER_REGEX = "^[1-9]\d*$"
+# 不为空
+EMPTY_REGEX = "^\\s+$"
 
 ERR_LIST = []
 COMMON_ERR_LIST = []
@@ -212,6 +214,9 @@ def check_str(data, schema, is_common):
 
             if format_schema == 'email' and not re.match(EMAIL_REGEX, data):
                 log_error("当前校验的数据不是正确的邮箱格式", data, schema, is_common)
+
+            if format_schema == 'notemp' and re.match(EMPTY_REGEX, data):
+                log_error("当前校验的数据为空", data, schema, is_common)
 
             elif format_schema == 'phone' and not re.match(PHONE_REGEX, data):
                 log_error("当前校验的数据不是正确的手机号码格式", data, schema, is_common)

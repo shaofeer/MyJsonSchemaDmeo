@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "minProperties": 1,
+  "maxProperties": 200,
+  "properties": {
+    "CUST_SO_NUMBER": {
+      "id": "CUST_SO_NUMBER",
+      "type": "string",
+      "format": "notemp"
+    },
+    "ORDER_CREATE_DATE": {
+      "id": "ORDER_CREATE_DATE",
+      "type": "string",
+      "format": "notemp"
+    },
+    "PRE_HANDLE_NUMBER": {
+      "id": "PRE_HANDLE_NUMBER",
+      "type": "string"
+    },
+    "CUST_ID": {
+      "id": "CUST_ID",
+      "type": "string",
+      "format": "notemp"
+    },
+    "CERT_TYPE": {
+      "id": "CERT_TYPE",
+      "type": "string",
+      "format": "notemp"
+    },
+    "CERT_NUM": {
+      "id": "CERT_NUM",
+      "type": "string",
+      "format": "notemp"
+    },
+    "STAFF_ID": {
+      "id": "STAFF_ID",
+      "type": "string",
+      "format": "notemp"
+    },
+    "AREA_CODE": {
+      "id": "AREA_CODE",
+      "type": "string",
+      "format": "notemp"
+    },
+    "CHANNEL_NBR": {
+      "id": "CHANNEL_NBR",
+      "type": "string",
+      "format": "notemp"
+    },
+    "ORDER_TYPE": {
+      "type": "string",
+      "id": "ORDER_TYPE",
+      "format": "notemp"
+    },
+    "ORDER_TYPE_INFO": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "PRODUCT_NBR": {
+            "id": "PRODUCT_NBR",
+            "type": "string",
+            "enum": [
+              "280000000",
+              "235010011",
+              "235020561",
+              "235010000",
+              "280000025",
+              "13409900",
+              "13410447",
+              "13409262",
+              "13409301",
+              "13409263",
+              "13413425",
+              "13410406",
+              "381001040",
+              "13410908",
+              "235022684"
+            ],
+            "format": "notemp"
+          },
+          "VALUE": {
+            "id": "VALUE",
+            "type": "string",
+            "format": "notemp"
+          }
+        },
+        "required": [
+          "PRODUCT_NBR",
+          "VALUE"
+        ]
+      }
+    }
+  },
+  "required": [
+    "CUST_SO_NUMBER",
+    "ORDER_CREATE_DATE",
+    "PRE_HANDLE_NUMBER",
+    "CUST_ID",
+    "CERT_TYPE",
+    "CERT_NUM",
+    "STAFF_ID",
+    "AREA_CODE",
+    "CHANNEL_NBR",
+    "ORDER_TYPE",
+    "ORDER_TYPE_INFO"
+  ]
+}

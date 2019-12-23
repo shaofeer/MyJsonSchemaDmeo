@@ -55,6 +55,7 @@
   },
   "patternProperties": {
     "^\\S+123$": {
+      "const": "${cscs}"
     }
   },
   "if": {
